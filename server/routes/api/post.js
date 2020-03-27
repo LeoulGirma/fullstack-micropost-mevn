@@ -21,7 +21,7 @@ router.post('/', async (req, res) => {
     res.status(201).send();
 })
 
-//delete post
+//delete post  
 router.delete('/:id', async (req, res) => {
     const posts = await loadPostsCollection();
     //mogodb id is obj type so we need to specify as it is an object id
