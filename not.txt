@@ -1,0 +1,4 @@
+
+npm run build creates dist
+
+here its called public so that the express server can use it as its static folder

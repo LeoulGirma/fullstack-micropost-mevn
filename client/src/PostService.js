@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const url = 'http://localhost:5000/api/posts/'
+//changing for heroku deployment
+const url = '/api/posts/'
 
 // service for making requests to the api
 
