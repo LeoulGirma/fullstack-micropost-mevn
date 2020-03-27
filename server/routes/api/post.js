@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
     const posts = await loadPostsCollection();
     res.send(await posts.find({}).toArray());
 })
-var url = "mongodb://localhost:27017/vue_express"
+var url = "mongodb+srv://<Username>:<PASSWORD>@cluster0-ndm33.mongodb.net/<database name>?retryWrites=true&w=majority"
 
-
+// replace allwith <> with ur own username password and databse name with out the <>
 //add posts
 router.post('/', async (req, res) => {
     const posts = await loadPostsCollection();
@@ -34,8 +34,10 @@ async function loadPostsCollection() {
     const client = await mongodb.MongoClient.connect(
         url, { useNewUrlParser: true, useUnifiedTopology: true }
     )
+
     return client.db('vue_express').collection('posts');
 }
+
 
 module.exports = router;
 
